@@ -23,7 +23,10 @@ First cut, built against pino 10.4.0 (upstream commit b29dbe9).
 - CLI: `build`, `stats`, `verify` (exit code 2 on unparsable lines).
 - Tests: 61 `node:test` cases including integration against the repository pino
   build, plus 14 browser checks in Chromium with pixel-level assertions.
-- Packaging: root `.npmignore` excludes `lens/` from the `pino` tarball.
+- Packaging: root `.npmignore` excludes `lens/` from the `pino` tarball, and the
+  root `borp` scripts pass `--ignore "lens/**"` so the pino suite keeps running
+  exactly the files it ran before (CI caught this: borp's default glob had
+  started collecting `lens/test/**`).
 - Example: `examples/traffic-service` generates a real 67,673-line dataset by
   running the repository build behind an HTTP server, with a manifest recording
   command, versions, counts and SHA-256.
