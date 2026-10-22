@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="pino-lens __PINOLENS_VERSION__">
+<title>__PINOLENS_TITLE__</title>
+<style>
+/*__PINOLENS_CSS__*/
+</style>
+</head>
+<body>
+<header class="pl-header">
+  <div class="pl-brand">
+    <span class="pl-dot" aria-hidden="true"></span>
+    <h1 id="pl-title">pino-lens</h1>
+    <span class="pl-tag">NDJSON explorer</span>
+  </div>
+  <div class="pl-meta" id="pl-meta"></div>
+  <div class="pl-actions">
+    <details class="pl-pop">
+      <summary>CSV columns</summary>
+      <div id="pl-columns-list" class="pl-columns"></div>
+    </details>
+    <button type="button" id="pl-export-csv" class="pl-btn">Export CSV</button>
+    <button type="button" id="pl-export-ndjson" class="pl-btn">Export NDJSON</button>
+    <button type="button" id="pl-export-summary" class="pl-btn pl-btn-ghost">Summary JSON</button>
+  </div>
+</header>
+
+<div id="pl-issues" class="pl-issues" role="status" hidden></div>
+
+<section class="pl-controls" aria-label="filters">
+  <label class="pl-sr" for="pl-search">filter query</label>
+  <input id="pl-search" type="search" spellcheck="false" autocomplete="off"
+         placeholder='filter: level&gt;=warn · msg~"timeout" · host=api-1 · -"healthz"'>
+  <div id="pl-levels" class="pl-levels" role="group" aria-label="level filter"></div>
+  <div class="pl-sortwrap">
+    <label class="pl-sr" for="pl-sort">sort by</label>
+    <select id="pl-sort">
+      <option value="time">sort: time</option>
+      <option value="level">sort: level</option>
+      <option value="duration">sort: duration</option>
+      <option value="msg">sort: message</option>
+      <option value="line">sort: line order</option>
+    </select>
+    <button type="button" id="pl-dir" class="pl-btn pl-btn-icon" aria-label="sort ascending">↑</button>
+  </div>
+  <div id="pl-count" class="pl-count" role="status" aria-live="polite"></div>
+</section>
+
+<section class="pl-timeline" id="pl-timeline" aria-label="entries over time">
+  <canvas id="pl-chart" aria-label="stacked log volume over time. Drag to filter a time range, double-click to reset."></canvas>
+  <div id="pl-tip" class="pl-tip" role="tooltip"></div>
+</section>
+
+<main class="pl-body">
+  <div class="pl-table-wrap">
+    <div class="pl-head" aria-hidden="true">
+      <span class="pl-cell pl-time">time</span>
+      <span class="pl-cell pl-level">level</span>
+      <span class="pl-cell pl-msg">message</span>
+      <span class="pl-cell pl-dur">ms</span>
+    </div>
+    <div class="pl-table" id="pl-table" tabindex="0" role="grid" aria-label="log entries" aria-rowcount="0">
+      <div class="pl-rows">
+        <div class="pl-window"></div>
+      </div>
+    </div>
+  </div>
+  <aside class="pl-detail" id="pl-detail" tabindex="0" aria-label="entry detail"></aside>
+</main>
+
+<script id="pino-lens-data" type="application/json">__PINOLENS_DATA__</script>
+<script>
+/*__PINOLENS_SCRIPTS__*/
+</script>
+</body>
+</html>

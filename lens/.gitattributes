@@ -1,0 +1,9 @@
+# Byte-fidelity for generated artefacts.
+#
+# The sample dataset is hashed in its manifest, and NDJSON exports are promised
+# to be byte-identical to the input. With the Windows default (core.autocrlf)
+# Git would rewrite line endings on checkout, so opt these files out of any
+# text conversion. Same for the pre-built report, which embeds that data.
+*.ndjson -text
+*.html -text
+*.png binary

@@ -1,0 +1,33 @@
+{
+  "tool": "pino-lens/example-traffic-service",
+  "generatedAt": "2026-10-22T19:00:55.355Z",
+  "finishedAt": "2026-10-22T19:01:27.917Z",
+  "durationMs": 32329,
+  "command": "node generate.js --requests 30000",
+  "environment": {
+    "node": "v22.22.2",
+    "platform": "win32",
+    "arch": "x64",
+    "cpus": 16,
+    "pino": "10.4.0",
+    "pinoCommit": "b29dbe9",
+    "source": "repository build at ../../../pino.js"
+  },
+  "requestMix": {
+    "requests": 30000,
+    "concurrency": 24,
+    "seed": 20261023,
+    "ok": 26184,
+    "client4xx": 2069,
+    "server5xx": 1747,
+    "networkErrors": 0
+  },
+  "output": {
+    "file": "traffic.ndjson",
+    "lines": 67673,
+    "bytes": 16171652,
+    "sha256": "4374d4d136c800b77b9b629d65218c8d2dcd3ddb6616d5e2d2fdb94900694866",
+    "linesPerRequest": 2.256
+  },
+  "privacy": "No personal data: hostname is a fixed base binding (\"lab-node-01\"), the bearer token sent by the driver is the literal string \"demo-token-not-a-secret\" and is redacted by pino before it reaches the file."
+}

@@ -18,6 +18,7 @@
 * [Diagnostics ⇗](/docs/diagnostics.md)
 * [Web Frameworks ⇗](/docs/web.md)
 * [Pretty Printing ⇗](/docs/pretty.md)
+* [Inspecting logs ⇗](/docs/lens.md)
 * [Asynchronous Logging ⇗](/docs/asynchronous.md)
 * [Ecosystem ⇗](/docs/ecosystem.md)
 * [Help ⇗](/docs/help.md)

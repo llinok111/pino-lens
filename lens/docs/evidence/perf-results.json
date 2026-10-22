@@ -1,0 +1,43 @@
+{
+  "capturedAt": "2026-10-22T19:02:29.334Z",
+  "browser": "C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe",
+  "node": "v22.22.2",
+  "platform": "win32 x64",
+  "note": "single-machine measurement, headless Chromium, file:// load, cold page per dataset",
+  "results": [
+    {
+      "label": "traffic.ndjson",
+      "loadMs": 563,
+      "entries": 67673,
+      "bytes": 16147620,
+      "parseMs": 157.4,
+      "domRows": 42,
+      "msgFilterMs": 1.2,
+      "fieldFilterMs": 48.1,
+      "levelFilterMs": 0.3,
+      "sortMs": 7.5,
+      "endToEndMs": 17.3,
+      "rows": 67673,
+      "heapMB": 164.6,
+      "cliBuildMs": 556,
+      "reportMB": 18
+    },
+    {
+      "label": "stress.ndjson",
+      "loadMs": 1313,
+      "entries": 135394,
+      "bytes": 32349205,
+      "parseMs": 688.1,
+      "domRows": 42,
+      "msgFilterMs": 3.9,
+      "fieldFilterMs": 222.3,
+      "levelFilterMs": 1.2,
+      "sortMs": 37.1,
+      "endToEndMs": 73.7,
+      "rows": 135394,
+      "heapMB": 279.4,
+      "cliBuildMs": 1055,
+      "reportMB": 35.9
+    }
+  ]
+}

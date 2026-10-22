@@ -1,0 +1,43 @@
+{
+  "name": "pino-lens",
+  "version": "0.1.0",
+  "description": "Zero-dependency interactive explorer for pino NDJSON logs: filter, sort, inspect, and export without shipping logs to a server",
+  "license": "MIT",
+  "author": "llinok111",
+  "type": "commonjs",
+  "main": "src/index.js",
+  "bin": {
+    "pino-lens": "./bin/pino-lens.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "files": [
+    "src",
+    "assets",
+    "bin",
+    "docs",
+    "LICENSE",
+    "NOTICE",
+    "README.md",
+    "CHANGELOG.md"
+  ],
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "test:browser": "node --test test/browser/*.test.js",
+    "test:all": "node --test test/*.test.js test/browser/*.test.js",
+    "sample": "node examples/traffic-service/generate.js",
+    "report": "node bin/pino-lens.js build examples/traffic-service/data/traffic.ndjson -o examples/traffic-service/data/traffic-report.html",
+    "verify": "node bin/pino-lens.js verify examples/traffic-service/data/traffic.ndjson"
+  },
+  "devDependencies": {
+    "puppeteer-core": "^24.0.0"
+  },
+  "keywords": [
+    "pino",
+    "logs",
+    "ndjson",
+    "observability",
+    "visualisation"
+  ]
+}

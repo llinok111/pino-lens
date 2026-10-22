@@ -1,0 +1,45 @@
+pino-lens
+=========
+
+This directory is an independent, MIT-licensed module that reads the output of
+pino. It does not vendor or copy pino's implementation.
+
+Upstream project
+----------------
+pino — https://github.com/pinojs/pino
+Version read for this work: 10.4.0 (upstream commit b29dbe9)
+Licence: MIT — Copyright (c) 2016-present Matteo Collina, David Mark Clements
+and the Pino contributors listed at <https://github.com/pinojs/pino#the-team>
+
+What was taken from upstream
+----------------------------
+Only the *observable wire format* and facts that are required for compatibility:
+
+  * the default level table (trace 10 … fatal 60), read from lib/constants.js;
+  * the shape of a log line, produced by lib/proto.js `_asJson`
+    (`level`, `time`, `pid`, `hostname`, bindings, message key, trailing \n);
+  * pino's value coerced semantics: non-finite numbers become `null`,
+    `undefined`/function values are dropped, circular structures become
+    `[Circular]` via safe-stable-stringify;
+  * the default redaction censor string `[Redacted]`;
+  * the interaction between `nestedKey` and redaction paths, verified by
+    running the repository build rather than reading documentation.
+
+No source file from pino is included in this directory. The example service
+imports the repository's own `pino.js` at runtime rather than copying it.
+
+Third-party runtime dependencies
+-------------------------------
+None. The report embeds only hand-written JavaScript and CSS. `puppeteer-core`
+is a development dependency used by the browser test suite and is not part of
+the generated report.
+
+Sample data
+-----------
+`examples/traffic-service/out/traffic.ndjson` was produced by running the
+pino build in this repository behind a local HTTP server on 2026-10-22.
+It contains no personal data: the hostname is a fixed `base` binding
+(`lab-node-01`), the only authorisation value sent by the driver is the literal
+string `demo-token-not-a-secret`, and pino redacts it before it reaches disk.
+The accompanying `traffic.manifest.json` records the command, versions, counts
+and SHA-256 of the file.
