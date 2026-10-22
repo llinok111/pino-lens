@@ -23,6 +23,7 @@ First cut, built against pino 10.4.0 (upstream commit b29dbe9).
 - CLI: `build`, `stats`, `verify` (exit code 2 on unparsable lines).
 - Tests: 61 `node:test` cases including integration against the repository pino
   build, plus 14 browser checks in Chromium with pixel-level assertions.
+- Packaging: root `.npmignore` excludes `lens/` from the `pino` tarball.
 - Example: `examples/traffic-service` generates a real 67,673-line dataset by
   running the repository build behind an HTTP server, with a manifest recording
   command, versions, counts and SHA-256.

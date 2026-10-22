@@ -71,10 +71,10 @@ pino 10.4.0. Where a number is quoted it was measured, not estimated.
 
 16. **Not published to npm.** `pino-lens` is unclaimed on the registry; the
     package is installed from this directory.
-17. **`lens/` is not excluded from the pino tarball.** The upstream
-    `package.json` has no `files` field, so `npm pack` at the repository root
-    would include this directory. If upstream adopts it, add `lens` to
-    `.npmignore` or add a `files` allowlist first.
+17. **`lens/` is excluded from the pino tarball.** The upstream `package.json`
+    has no `files` field, so the root `.npmignore` now lists `lens/`; without
+    that line `npm pack` would ship the sample dataset and the pre-built report
+    inside the `pino` package.
 18. **The example service is a demo, not a benchmark.** Its timings and status
     mix come from a loopback HTTP server on one machine; they are useful as
     realistic log input, not as a performance claim about pino.

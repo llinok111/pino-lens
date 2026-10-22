@@ -3,3 +3,5 @@
 docsify/
 .nyc_output/
 coverage/
+# in-repo log viewer module (ships on its own, not inside the pino tarball)
+lens/
