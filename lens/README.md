@@ -142,7 +142,13 @@ for the browser, so the same files run in both places without a build step.
 
 ## Tests
 
+The integration tests and the example generator load pino from the repository
+root, so its runtime dependencies must be present:
+
 ```bash
+cd .. && npm install --omit=dev     # 12 packages, pino's own runtime deps
+cd lens
+
 npm test            # 61 node:test cases (unit + real-pino integration)
 npm run test:browser   # 14 checks in a real Chromium engine, incl. pixel probes
 npm run test:all
